@@ -323,6 +323,12 @@ function CharCreate(player)
 	-- Needs Moghouse Intro
 	player:setVar("MoghouseExplication",1);
     
+	-- GIVE THE NEW CHARACTER A LINKPEARL
+	-- first check for valid ls
+	if (isValidLS("myLinkshellName") == true) then 
+		player:addLS("myLinkshellName"); -- add the pearl
+	end
+
 end;
 
 function onPlayerLevelUp(player)

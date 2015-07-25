@@ -61,6 +61,8 @@ namespace luautils
 	int32 print(lua_State*);
     int32 prepFile(int8*, const char*);
 
+	int32 isValidLS(lua_State*);                                                // Checks if LS exists
+
     int32 SendEntityVisualPacket(lua_State*);                                    // временное решение для работы гейзеров в Dangruf_Wadi
 
 	int32 GetNPCByID(lua_State*);												// Returns NPC By Id

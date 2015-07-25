@@ -324,6 +324,7 @@ function CharCreate(player)
 	player:setVar("MoghouseExplication",1);
     
 	-- GIVE THE NEW CHARACTER A LINKPEARL
+	-- to linkshell myLinkshellName (change to linkshell on server)
 	-- first check for valid ls
 	if (isValidLS("myLinkshellName") == true) then 
 		player:addLS("myLinkshellName"); -- add the pearl

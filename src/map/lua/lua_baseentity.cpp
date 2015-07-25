@@ -170,7 +170,7 @@ inline int32 CLuaBaseEntity::addLS(lua_State* L)
 		{
 			CItem* PItem = itemutils::GetItem(515);
 
-			// Update item with name & color //
+			// Update item with name & color
 			int8 EncodedString[16];
 			EncodeStringLinkshell((int8*)linkshellName, EncodedString);
 			PItem->setSignature(EncodedString);
@@ -178,14 +178,15 @@ inline int32 CLuaBaseEntity::addLS(lua_State* L)
 			((CItemLinkshell*)PItem)->SetLSColor(Sql_GetIntData(SqlHandle, 1));
 			uint8 invSlotID = charutils::AddItem(PChar, LOC_INVENTORY, PItem, 1);
 
-			// auto-equip it // TODO test me
-			/* if (invSlotID != ERROR_SLOTID)
+			// auto-equip the linkshell if possible
+			// should never be an issue with a new character
+			if (invSlotID != ERROR_SLOTID)
 			{
 			PItem->setSubType(ITEM_LOCKED);
-			PChar->equip[SLOT_LINK] = invSlotID;
-			PChar->equipLoc[SLOT_LINK] = LOC_INVENTORY;
-			linkshell::AddOnlineMember(PChar, (CItemLinkshell*)PItem);
-			} */
+			PChar->equip[SLOT_LINK1] = invSlotID;
+			PChar->equipLoc[SLOT_LINK1] = LOC_INVENTORY;
+			linkshell::AddOnlineMember(PChar, (CItemLinkshell*)PItem, 1);
+			}
 		}
 	}
 

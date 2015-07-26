@@ -1,4 +1,14 @@
 [![Build Status](https://travis-ci.org/DarkstarProject/darkstar.svg?branch=master)](https://travis-ci.org/DarkstarProject/darkstar)
+
+ABOUT THIS BRANCH
+========
+This branch contains some custom modifications to be used on private servers. 
+
+When a new character is created and added to an account, the additional code within this branch will automatically create a linkpearl for the new character, and equip it to linkshell slot 1.
+
+To make this happen for your specific linkshell, you must modify the /scripts/globals/player.lua file on line 329 and 330. Change myLinkshellName to the name of your linkshell, and you'll be good to go.
+
+
 Darkstar Project
 ========
 
